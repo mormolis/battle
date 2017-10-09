@@ -12,6 +12,12 @@ get '/public' do
   'Yo!'
 end
 
-get '/cat' do
+get '/random-cat' do
+  @name = %w(Jon David Slim Jebvther).sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @name = params[:name]
   erb(:index)
 end
