@@ -10,6 +10,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    childprocess (0.8.0)
+      ffi (~> 1.0, >= 1.0.11)
+    ffi (1.9.18)
     mini_mime (0.1.4)
     mini_portile2 (2.3.0)
     mustermann (1.0.1)
@@ -21,6 +24,10 @@ GEM
       rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
+    rubyzip (1.2.1)
+    selenium-webdriver (3.6.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -35,6 +42,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  selenium-webdriver
   sinatra
 
 BUNDLED WITH
