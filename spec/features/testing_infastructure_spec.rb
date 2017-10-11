@@ -4,7 +4,7 @@ feature 'Testing infrastructure' do
     visit('/')
     end
     scenario 'Can run app and check page content' do
-      expect(page).to have_content('Testing infrastructure working!')
+      expect(page).to have_field("name")
     end
     scenario 'Can enter a name for player 1' do
       fill_in :name, with: 'Alex'
