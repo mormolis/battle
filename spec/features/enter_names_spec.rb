@@ -10,10 +10,7 @@ require_relative '../../app.rb'
 
 feature "Players fill in names in a form, submit and see names on screen" do
   scenario "should display: 'Tom versus Georgios'" do
-    visit("/")
-    fill_in :player_one, with: "Tom"
-    fill_in :player_two, with: "Georgios"
-    click_button "Enter the Arena"
+    sign_in_and_play
     expect(page).to have_content "Tom versus Georgios"
   end
 end
