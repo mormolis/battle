@@ -7,7 +7,7 @@ class Battle < Sinatra::Base
 
   post '/names' do
     @player1, @player2 = params[:name1], params[:name2]
-    erb(:names)
+    erb(:play)
   end
 
   run! if app_file == $0
