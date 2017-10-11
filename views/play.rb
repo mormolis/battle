@@ -1,1 +1,0 @@
-<%= "Welcome to the game, #{@player1} and #{@player2}!" %>
