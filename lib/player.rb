@@ -3,8 +3,8 @@ class Player
   ATTACK_DAMAGE = 10
   attr_reader :name, :hitpoints
 
-  def initialize(args)
-    @name = args[:name]
+  def initialize(name)
+    @name = name
     @hitpoints = HITPOINTS
   end
 
