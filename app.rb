@@ -19,9 +19,8 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
-    @player_1_name, @player_2_name = $player1.name, $player2.name
-    $player2.attacked
-    @player_2_hp = $player2.hp_value
+    @player_1, @player_2 = $player1, $player2
+    @player_1.attack(@player_2)
     erb(:attack)
   end
 
