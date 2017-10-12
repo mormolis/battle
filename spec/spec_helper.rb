@@ -4,6 +4,7 @@ require_relative '../lib/app'
 require 'sinatra'
 require 'capybara/rspec'
 require 'rspec'
+require_relative 'features/spec_helper'
 
 Capybara.app = Battle
 
