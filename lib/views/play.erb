@@ -1,4 +1,7 @@
 <h1> <%= "#{@player1} vs. #{@player2}" %> </h1>
 <h3>Let Battle commence!</h3>
-<h2> <%= @player1 %>'s hit points: 0 </h2>
-<h2> <%= @player2 %>'s hit points: 0 </h2>
+<h2> <%= @player1 %>'s hit points: <%= @player1_hp %> </h2>
+<h2> <%= @player2 %>'s hit points: <%= @player2_hp %> </h2>
+<form method='POST' action='/p1-attacks'>
+<input type='submit' value="Player 1 attack!">
+</form>
