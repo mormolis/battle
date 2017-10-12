@@ -26,4 +26,9 @@ class Battle < Sinatra::Base
     @game.attack(@game.players.last)
     erb :attack
   end
+
+  get '/game_over' do
+    @game = $game
+    erb :game_over
+  end
 end

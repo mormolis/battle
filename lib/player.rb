@@ -1,6 +1,6 @@
 class Player
   HITPOINTS = 60
-  ATTACK_DAMAGE = 10
+  ATTACK_DAMAGE = 40
   attr_reader :name, :hitpoints
 
   def initialize(name)
