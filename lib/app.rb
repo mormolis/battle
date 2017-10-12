@@ -12,9 +12,10 @@ class Battle < Sinatra::Base
     '<h1>Testing infrastructure working!</h1>'
   end
 
-  post '/names' do
-    $player1 = Player.new(name: params[:player1])
-    $player2 = Player.new(name: params[:player2])
+  post '/names' do    
+    $game = Game.new(params[:player1], params[:player2])
+    $player1 = $game.player1
+    $player2 = $game.player2
     redirect('/play')
   end
 
@@ -23,7 +24,7 @@ class Battle < Sinatra::Base
   end
 
   post '/p1-attacks' do
-    $player2.take_hit
+    $game.attack($player2)
     erb :p1attacks
   end
 end
