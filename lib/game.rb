@@ -12,28 +12,21 @@ class Game
     @players.reverse!
   end
 
-  def end_game?
-   players.each{ |player| return true if player.hitpoints <= 0}
-   false
-  end
-
-  def game_over
-    @winner = players.last
-  end
-
   def link
     if end_game?
       game_over
       return "/game_over"
-    else
-      return "/play"
     end
+      "/play"
   end
-  # def player1
-  #   @players.first
-  # end
-  #
-  # def player2
-  #   @players.last
-  # end
+
+  private
+  def end_game?
+    players.each{ |player| return true if player.hitpoints <= 0}
+    false
+   end
+   
+   def game_over
+    @winner = players.last
+  end
 end
