@@ -2,20 +2,20 @@ require 'sinatra/base'
 
 class Battle < Sinatra::Base
   enable :sessions
-  get "/" do
+  get '/' do
     erb(:index)
   end
 
-  post "/names" do
+  post '/names' do
     session[:player_one] = params[:player_one]
     session[:player_two] = params[:player_two]
     session[:player_one_hp] = 60
     session[:player_two_hp] = 60
-    
-    redirect "/play"
+
+    redirect '/play'
   end
 
-  get "/play" do
+  get '/play' do
     @player_one = session[:player_one]
     @player_one_hp = session[:player_one_hp]
     @player_two = session[:player_two]
@@ -23,7 +23,7 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  post "/attack_confirmation" do
+  post '/attack_confirmation' do
     @player_one = session[:player_one]
     @player_two = session[:player_two]
 
@@ -31,8 +31,8 @@ class Battle < Sinatra::Base
   end
 
   post '/attack_confirmation' do
-    "Hello World"
+    'Hello World'
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end
