@@ -1,4 +1,4 @@
-feature "so that a player can win they can attack" do
+feature "So that a player can win they can attack" do
   scenario "player 1 attacks player 2" do
     sign_in_and_play
     click_button "Attack"

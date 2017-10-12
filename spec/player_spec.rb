@@ -1,4 +1,4 @@
-require_relative '../lib/Model_layer/player'
+require 'player'
 
 describe Player do
 
