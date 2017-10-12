@@ -16,7 +16,7 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/attack' do
+  post '/attack' do
     @player1, @player2 = session[:name1], session[:name2]
     erb(:attack)
   end
