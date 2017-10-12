@@ -23,9 +23,9 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  post '/p1-attacks' do
+  post '/attack' do
     @game = $game
-    @game.attack(@game.player2)
-    erb :p1attacks
+    @game.attack(@game.players.last)
+    erb :attack
   end
 end

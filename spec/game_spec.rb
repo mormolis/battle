@@ -6,10 +6,10 @@ describe Game do
   let(:game) { Game.new(player1, player2) }
   describe '#initialize' do
     it "should return player one's name" do
-      expect(game.player1.name).to eq 'player1'
+      expect(game.players.first.name).to eq 'player1'
     end
     it "should return player two's name" do
-      expect(game.player2.name).to eq 'player2'
+      expect(game.players.last.name).to eq 'player2'
     end
   end
 

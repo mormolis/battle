@@ -9,6 +9,6 @@ class Player
   end
 
   def take_hit
-    @hitpoints -= ATTACK_DAMAGE * 100
+    @hitpoints -= ATTACK_DAMAGE
   end
 end
