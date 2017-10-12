@@ -11,10 +11,9 @@ class Battle < Sinatra::Base
   enable :sessions
 
   post '/names' do
-    # $player1 = Player.new(params[:name1])
-    # $player2 = Player.new(params[:name2])
-    player_1 , player_2 = Player.new(params[:name1]), Player.new(params[:name2])
-    $game = Game.new(player_1, player_2)
+    @player_1 , @player_2 = Player.new(params[:name1]), Player.new(params[:name2])
+    $game = Game.new(@player_1, @player_2)
+    @game = $game
     redirect '/play'
   end
 
@@ -25,7 +24,8 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
+    @game.attack(@game.opposite_of(@game.current_turn))
+    @game.switch_turn
     erb(:attack)
   end
 

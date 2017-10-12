@@ -8,6 +8,6 @@ feature "So that a player can win they can attack" do
     sign_in_and_play
     click_button 'Attack'
     click_link 'OK'
-    expect(page).to have_content "Alex has 50HP"
+    expect(page).to have_content "David: 60HP vs. Alex: 50HP"
   end
 end
