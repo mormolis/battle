@@ -8,10 +8,6 @@ DEFAULT_HP = 60
     @hp_value = hp_value
   end
 
-  def attack(player)
-    player.receive_damage
-  end
-
   def receive_damage
     @hp_value -= 10
   end

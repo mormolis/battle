@@ -17,12 +17,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'initiates an attack on the player given' do
-      expect(player2).to receive(:receive_damage)
-      player1.attack(player2)
-    end
-  end
 
   describe '#receive_damage' do
     it 'reduces the player hp value' do
