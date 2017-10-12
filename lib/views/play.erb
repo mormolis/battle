@@ -1,7 +1,9 @@
-<h1> <%= "#{@game.players.first.name} vs. #{@game.players.last.name}" %> </h1>
+<h1> <%= @game.header %> </h1>
 <h3>Let Battle commence!</h3>
 <h2> <%= @game.players.first.name %>'s hit points: <%= @game.players.first.hitpoints %> </h2>
 <h2> <%= @game.players.last.name %>'s hit points: <%= @game.players.last.hitpoints %> </h2>
+<br>
+<h2> <%= @game.players.first.name %>'s turn! </h2>
 <form method='POST' action='/attack'>
 <input type='submit' value="Attack!">
 </form>

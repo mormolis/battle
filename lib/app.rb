@@ -3,8 +3,6 @@ require_relative 'game'
 require_relative 'player'
 
 class Battle < Sinatra::Base
-  enable :sessions
-
   get '/' do
     erb :form
   end
