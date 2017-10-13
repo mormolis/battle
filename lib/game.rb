@@ -16,14 +16,14 @@ class Game
   #   def current_game
   #     @@current_game
   #   end
-  
+
   # end  
   def self.set_current_game(player_1, player_2)
-    @@current_game = Game.new(player_1, player_2)
+    @current_game = Game.new(player_1, player_2)
   end
 
   def self.current_game
-    @@current_game
+    @current_game
   end
 
   def player_1
