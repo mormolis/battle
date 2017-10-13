@@ -24,9 +24,23 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
-    @game.switch_turn
+    @game.attack(@game.players.last)
     erb(:attack)
+  end
+
+  get '/switch_turns' do
+  @game = $game
+    if @game.players.last.hp_value <= 0 
+      redirect '/game_over'
+    else   
+      @game.switch_turn
+      redirect '/play'
+    end
+  end
+
+  get '/game_over' do
+    @game = $game
+    "#{@game.players.first.name} has won!"
   end
 
   run! if app_file == $0

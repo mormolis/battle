@@ -1,7 +1,5 @@
-
-
 class Game
-  attr_reader :current_turn, :opposition
+  attr_reader :current_turn, :players
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
@@ -21,11 +19,6 @@ class Game
   end
 
   def switch_turn
-    #@current_turn = opposite_of(@current_turn)
     @players.reverse!
   end
-
-  #def opposite_of(other_player)
-    #@players.select { |player| player != other_player }.first
-  #end
 end
