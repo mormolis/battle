@@ -29,18 +29,13 @@ class Battle < Sinatra::Base
   end
 
   get '/switch_turns' do
-  @game = $game
-    if @game.players.last.hp_value <= 0 
-      redirect '/game_over'
-    else   
-      @game.switch_turn
-      redirect '/play'
-    end
+    @game = $game
+    redirect @game.path_to_string
   end
 
   get '/game_over' do
     @game = $game
-    "#{@game.players.first.name} has won!"
+    erb(:game_over)
   end
 
   run! if app_file == $0

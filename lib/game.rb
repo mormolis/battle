@@ -21,4 +21,14 @@ class Game
   def switch_turn
     @players.reverse!
   end
+
+  def path_to_string
+    if players.last.hp_value <= 0 
+      return '/game_over'
+    else
+      switch_turn
+      return '/play'
+    end
+  end
+  
 end
